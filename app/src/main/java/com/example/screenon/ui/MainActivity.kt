@@ -1,4 +1,4 @@
-package com.example.screenon
+package com.example.screenon.ui
 
 import android.content.ContentValues
 import android.content.Intent
@@ -6,7 +6,10 @@ import android.content.IntentFilter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.example.screenon.data.DataManager
+import com.example.screenon.data.database.DataBaseHelper
 import com.example.screenon.databinding.ActivityMainBinding
+import com.example.screenon.util.DbTable
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -16,9 +19,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         val brodcastReciver = MyBrodcastReciver()
         val filter = IntentFilter()
-        filter.addAction(Intent.ACTION_SCREEN_ON)
+//        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O)
+//        {
+//            startForegroundService()
+//        }else
+
+        filter.addAction(Intent.ACTION_BOOT_COMPLETED)
         registerReceiver(brodcastReciver, filter)
 
         dataBaseHelper = DataBaseHelper(applicationContext)

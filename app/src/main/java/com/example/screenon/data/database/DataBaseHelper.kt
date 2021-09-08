@@ -1,8 +1,9 @@
-package com.example.screenon
+package com.example.screenon.data.database
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import com.example.screenon.util.DbTable
 
 class DataBaseHelper(context: Context):SQLiteOpenHelper(context, DB_NAME,null, DB_VERSION) {
 

@@ -1,4 +1,4 @@
-package com.example.screenon
+package com.example.screenon.data
 
 object DataManager {
     private val dataList = mutableListOf<String>()
