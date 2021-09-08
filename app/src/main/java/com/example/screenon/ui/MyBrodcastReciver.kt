@@ -20,7 +20,7 @@ class MyBrodcastReciver:BroadcastReceiver() {
                 } else{
                     val currentTime: Date = Calendar.getInstance().time
                     DataManager.addDate(currentTime.toString())
-                    Log.v("time111",currentTime.toString())
+                    //Log.v("time111",currentTime.toString())
 
                     Toast.makeText(p0, "testTwo", Toast.LENGTH_SHORT).show()
                 }

@@ -22,10 +22,7 @@ class MainActivity : AppCompatActivity() {
 
         val brodcastReciver = MyBrodcastReciver()
         val filter = IntentFilter()
-//        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O)
-//        {
-//            startForegroundService()
-//        }else
+
 
         filter.addAction(Intent.ACTION_BOOT_COMPLETED)
         registerReceiver(brodcastReciver, filter)
